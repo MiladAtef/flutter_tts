@@ -1,5 +1,15 @@
 # ChangeLog
 
+## 4.3.0
+
+### Features
+
+- **Android:** Migrates to built-in Kotlin. The plugin no longer applies the Kotlin Gradle Plugin, so it builds under AGP 9 with `android.builtInKotlin=true`. Apps that keep built-in Kotlin off still build: Flutter 3.44+ applies the Kotlin Gradle Plugin to plugins itself.
+- **Android:** `kotlinOptions` is replaced by `kotlin { compilerOptions }`, `lintOptions` by `lint`, and the explicit `kotlin-stdlib` dependency is dropped (the Kotlin plugin adds it).
+- **iOS/macOS:** Adds Swift Package Manager support. CocoaPods keeps working. The iOS Objective-C registration shim is removed and `SwiftFlutterTtsPlugin` is renamed `FlutterTtsPlugin`, matching `pluginClass` and the macOS plugin.
+- **iOS:** The minimum deployment target is now iOS 13, Flutter's own minimum.
+- Updates the minimum supported SDK version to Flutter 3.44/Dart 3.12.
+
 ## 4.2.5
 
 ### Fixes
